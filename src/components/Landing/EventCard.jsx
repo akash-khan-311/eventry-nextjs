@@ -5,7 +5,7 @@ import ActionButtons from "../ActionButtons";
 const EventCard = ({ event }) => {
     const { id, name, location, imageUrl, interseted_ids, going_ids } = event
 
-    console.log(event)
+
     return (
         <div className="overflow-hidden rounded-md bg-[#242526]">
             <Image src={imageUrl} width={500} height={500} alt={name} className="w-full min-h-72" />
