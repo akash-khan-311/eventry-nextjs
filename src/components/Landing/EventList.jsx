@@ -1,11 +1,18 @@
+import { getAllEvents } from "@/db/queries";
 import EventCard from "./EventCard";
 
-const EventList = () => {
+const EventList = async () => {
+    const events = await getAllEvents();
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
 
             {/* Event Card */}
-            <EventCard />
+
+            {
+                events.map(event => <EventCard event={event} key={event.id} />)
+            }
+
 
         </div>
 
