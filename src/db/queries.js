@@ -1,4 +1,8 @@
-import { replaceMongoIdInArray, replaceMongoIdInObject } from "@/utils/data-util";
+import { userModel } from "@/models/user-model";
+import {
+  replaceMongoIdInArray,
+  replaceMongoIdInObject,
+} from "@/utils/data-util";
 
 const { eventModel } = require("@/models/event-models");
 
@@ -12,4 +16,8 @@ const getEventById = async (id) => {
   return replaceMongoIdInObject(event);
 };
 
-export { getAllEvents , getEventById};
+const createUser = async (user) => {
+  return await userModel.create(user);
+};
+
+export { getAllEvents, getEventById, createUser };
